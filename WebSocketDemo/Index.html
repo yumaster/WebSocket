@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR WebClient</title>
+    <style type="text/css">
+        .container {
+            background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/jquery-2.2.1.js"></script>
+    <!--SignalR hub script. -->
+    <script src="websocket/swfobject.js"></script>
+    <script src="websocket/web_socket.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            initWS();
+        });
+        var ws;
+        function initWS(){
+        	if (isIE()) {
+                WEB_SOCKET_SWF_LOCATION = "/Content/websocket/WebSocketMain.swf";
+            }
+            ws = new WebSocket("ws://127.0.0.1:7799/queue");
+            ws.onopen = function () {
+                console.log("Openened connection to websocket");
+            };
+         	ws.onclose = function () {
+                console.log("Close connection to websocket");
+                // 断线重连
+                initWS();
+            }
+            ws.onmessage = function (e) {
+                console.log("接收返回数据"+e.data);
+            }
+        }
+        function initQueue(parameters){
+        	try {
+                parameters.amount = 1;
+                ws && ws.send(JSON.stringify(parameters))
+            }
+            catch (ex) {
+                var mymessage = confirm("是否下载队列服务？");
+                if (mymessage == true) {
+                    try {
+                        window.open('/Queue/Index');//,"宏树科技队列服务下载"
+                    } catch (e){
+                        $.messager.alert('错误', '队列服务异常。', 'error');
+                    }
+                }
+                else if (mymessage == false) {
+                    $.messager.alert('错误', '无法连接到队列服务，请开启队列服务。', 'error');
+                }
+            }
+        }
+     	function isIE() {
+			var DEFAULT_VERSION = 8.0;
+			var ua = navigator.userAgent.toLowerCase();
+			var isIE = ua.indexOf("msie") > -1;
+			var safariVersion;
+			if (isIE) {
+			    safariVersion = ua.match(/msie ([\d.]+)/)[1];
+			}
+			return safariVersion && (safariVersion > DEFAULT_VERSION);
+        }
+        function SendText(){
+            //var parameters = {id:0,content:$('#idSend').val()};
+            var parameters={};
+            parameters.type="post";
+            parameters.content=$('#idSend').val();
+            initQueue(parameters)
+        }
+        function GetData(){
+        	var parameters={};
+            parameters.type="get";
+            // parameters.content=$('#idSend').val();
+            initQueue(parameters)
+        }
+
+    </script>
+    <div>
+        <input type="text" id="idSend" name="">
+        <input type="button" onclick="SendText()" value="POST发送语音" />
+
+
+
+        <input type="button" onclick="GetData()" value="GET获取数据" />
+    </div>
+</body>
+</html>
+
+

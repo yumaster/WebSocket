@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.FrmMain.resources
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\bin\Debug\WebSocketApp.exe
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\bin\Debug\WebSocketApp.pdb
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.exe
+C:\Users\Administrator\Desktop\WebSocket\WebSocketApp\WebSocketApp\obj\Debug\WebSocketApp.pdb
